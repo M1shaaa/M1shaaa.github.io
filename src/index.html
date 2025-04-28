@@ -105,9 +105,14 @@
       src="../static/textures/monitor/video/static-texture-layer.mp4" style="opacity: 0;"></video>
   </div>
   <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      document.head.appendChild(Object.assign(document.createElement('script'), {
+        src: '/_vercel/insights/script.js',
+        defer: true
+      }));
+    }
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
