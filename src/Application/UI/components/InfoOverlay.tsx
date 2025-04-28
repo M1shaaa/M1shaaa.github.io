@@ -58,7 +58,7 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
         if (visible && nameText == '') {
             setTimeout(() => {
                 typeText(0, '', NAME_TEXT, setNameText, () => {
-                    typeText(0, '', TITLE_TEXT, setTitleText, () => {
+                    typeText(0, '', titleText, setTitleText, () => {
                         typeText(
                             0,
                             '',
