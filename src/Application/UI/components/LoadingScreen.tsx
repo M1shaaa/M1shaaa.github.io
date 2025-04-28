@@ -185,9 +185,6 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                         {showLoadingResources && doneLoading && (
                             <p>
                                 All Content Loaded, launching{' '}
-                                <b style={styles.green}>
-                                    'Henry Heffernan Portfolio Showcase'
-                                </b>{' '}
                                 V1.0
                             </p>
                         )}
@@ -234,7 +231,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                         </>
                     )}
                     <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-                        <p>Click start to begin{'\xa0'}</p>
+                        <p>click start to begin{'\xa0'}</p>
                         <span className="blinking-cursor" />
                     </div>
                     <div
