@@ -147,18 +147,9 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                         className="loading-screen-header"
                     >
                         <div style={styles.logoContainer}>
-                            <div>
-                                <p style={styles.green}>
-                                    <b>Heffernan,</b>{' '}
-                                </p>
-                                <p style={styles.green}>
-                                    <b>Henry Inc.</b>
-                                </p>
-                            </div>
                         </div>
                         <div style={styles.headerInfo}>
-                            <p>Released: 01/13/2000</p>
-                            <p>HHBIOS (C)2000 Heffernan Henry Inc.,</p>
+                            <p>loading...</p>
                         </div>
                     </div>
                     <div style={styles.body} className="loading-screen-body">
@@ -227,7 +218,7 @@ const LoadingScreen: React.FC<LoadingProps> = () => {
                     <p>But do enjoy what I have done so far :)</p>
                     <div style={styles.spacer} />
                     <div style={styles.spacer} /> */}
-                    <p>Henry Heffernan Portfolio Showcase 2022</p>
+                    <p>welcome to my personal website!</p>
                     {mobileWarning && (
                         <>
                             <br />
