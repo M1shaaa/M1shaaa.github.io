@@ -70,17 +70,31 @@ export default class Camera extends EventEmitter {
             event.preventDefault();
             // @ts-ignore
             if (event.target.id === 'prevent-click') return;
-            // print target and current keyframe
+            // Only zoom IN on click, not out
             if (
                 this.currentKeyframe === CameraKey.IDLE ||
                 this.targetKeyframe === CameraKey.IDLE
             ) {
                 this.transition(CameraKey.DESK);
-            } else if (
-                this.currentKeyframe === CameraKey.DESK ||
-                this.targetKeyframe === CameraKey.DESK
-            ) {
-                this.transition(CameraKey.IDLE);
+            }
+            // Don't zoom out on click - use escape key instead
+        });
+
+        // Add escape key listener to zoom out
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                // Zoom out one level
+                if (
+                    this.currentKeyframe === CameraKey.MONITOR ||
+                    this.targetKeyframe === CameraKey.MONITOR
+                ) {
+                    this.transition(CameraKey.DESK);
+                } else if (
+                    this.currentKeyframe === CameraKey.DESK ||
+                    this.targetKeyframe === CameraKey.DESK
+                ) {
+                    this.transition(CameraKey.IDLE);
+                }
             }
         });
 

@@ -8,6 +8,7 @@ export default class Decor {
     scene: THREE.Scene;
     resources: Resources;
     bakedModel: BakedModel;
+    model: THREE.Group;
 
     constructor() {
         this.application = new Application();
@@ -27,6 +28,11 @@ export default class Decor {
     }
 
     setModel() {
-        this.scene.add(this.bakedModel.getModel());
+        this.model = this.bakedModel.getModel();
+        this.scene.add(this.model);
+    }
+
+    getModel(): THREE.Group {
+        return this.model;
     }
 }

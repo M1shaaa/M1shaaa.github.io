@@ -8,6 +8,8 @@ import CoffeeSteam from './CoffeeSteam';
 import Cursor from './Cursor';
 import Hitboxes from './Hitboxes';
 import AudioManager from '../Audio/AudioManager';
+import InteractiveObjects from './InteractiveObjects';
+import Physics from '../Physics/Physics';
 export default class World {
     application: Application;
     scene: THREE.Scene;
@@ -21,6 +23,8 @@ export default class World {
     coffeeSteam: CoffeeSteam;
     cursor: Cursor;
     audioManager: AudioManager;
+    interactiveObjects: InteractiveObjects;
+    physics: Physics;
 
     constructor() {
         this.application = new Application();
@@ -35,6 +39,10 @@ export default class World {
             this.monitorScreen = new MonitorScreen();
             this.coffeeSteam = new CoffeeSteam();
             this.audioManager = new AudioManager();
+            this.physics = new Physics();
+            this.interactiveObjects = new InteractiveObjects();
+            // Set the decor model for interactive objects
+            this.interactiveObjects.setDecorModel(this.decor.getModel());
             // const hb = new Hitboxes();
             // this.cursor = new Cursor();
         });
@@ -45,5 +53,7 @@ export default class World {
         if (this.environment) this.environment.update();
         if (this.coffeeSteam) this.coffeeSteam.update();
         if (this.audioManager) this.audioManager.update();
+        if (this.interactiveObjects) this.interactiveObjects.update();
+        if (this.physics) this.physics.update(this.application.time.delta / 1000);
     }
 }
