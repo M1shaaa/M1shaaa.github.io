@@ -467,10 +467,10 @@ export default class InteractiveObjects {
 
             // Funny binder page content
             // Add date in top left
-            ctx.fillStyle = '#999';
-            ctx.font = '20px Arial';
-            ctx.textAlign = 'left';
-            ctx.fillText('2002', 180, 100);
+            // ctx.fillStyle = '#999';
+            // ctx.font = '20px Arial';
+            // ctx.textAlign = 'left';
+            // ctx.fillText('2002', 180, 100);
 
             ctx.fillStyle = '#2c3e50';
             ctx.font = 'bold 48px Arial';
